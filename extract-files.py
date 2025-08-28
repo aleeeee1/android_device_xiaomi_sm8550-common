@@ -117,7 +117,12 @@ blob_fixups: blob_fixups_user_type = {
     (
         'vendor/bin/init.kernel.post_boot-kalama.sh'
     ): blob_fixup()
-        .regex_replace('echo 0-3 > /dev/cpuset/system-background/cpus', 'echo 0-2 > /dev/cpuset/system-background/cpus'),
+        .regex_replace('echo 0-3 > /dev/cpuset/system-background/cpus', 'echo 0-2 > /dev/cpuset/system-background/cpus'),    
+    (
+        'vendor/bin/hw/vendor.dolby.media.c2@1.0-service', 
+        'vendor/bin/hw/dolbycodec2',
+    ): blob_fixup()
+        .add_needed('libshim_dolby.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
