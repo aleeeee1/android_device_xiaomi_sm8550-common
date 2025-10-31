@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
-    android.hardware.boot-service.qti.recovery
+    android.hardware.boot-service.qti.recoveryer
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -390,6 +390,11 @@ $(call soong_config_set,qti_vibrator,use_effect_stream,true)
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
+
+# Voltage Packages
+PRODUCT_PACKAGES += \
+    adb_root \
+    BtHelper
 
 # WiFi
 PRODUCT_PACKAGES += \
